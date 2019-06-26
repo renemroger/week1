@@ -1,7 +1,7 @@
 // FUNCTION IMPLEMENTATION
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`👍 👍 👍 Assertion Passed:  ${actual}  ===  ${expected}`);
   } else {
@@ -9,14 +9,14 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const head = function (arr) {
+const head = function(arr) {
   if (arr.length >= 1)
     return arr[0];
   else
     return undefined;
 };
 
-const tail = function (arr) {
+const tail = function(arr) {
   if (arr.length === 0) {
     return [];
   } else if (arr.lenth === 1) {
