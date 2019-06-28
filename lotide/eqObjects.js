@@ -28,10 +28,13 @@ const eqObjects = function(object1, object2) {
   }
   for (const property1 in object1) {
     if (Array.isArray(object1[property1]) && Array.isArray(object2[property1])) {
-      return eqArrays(object1[property1], object2[property1]);
-    }
-    if (object1[property1] !== object2[property1]) {
-      return false;
+      if (!eqArrays(object1[property1], object2[property1])) {
+        return false;
+      }
+    } else {
+      if (object1[property1] !== object2[property1]) {
+        return false;
+      }
     }
   }
   return true;
@@ -40,7 +43,18 @@ const eqObjects = function(object1, object2) {
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc));
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
+const cd3 = { c: "12", d: ["2", 3, 4] };
+const cd4 = { c: "12", d: ["2", 3, 4, 5] };
+const cd5 = { c: "12", d: ["2", 3, 4, 5], a: '4' };
+
+
+console.log(eqObjects(cd, dc));
+
 console.log(eqObjects(cd, cd2));
+
+console.log(eqObjects(cd3, cd2));
+console.log(eqObjects(cd3, cd2));
+console.log(eqObjects(cd4, cd3));
+console.log(eqObjects(cd4, cd5));
