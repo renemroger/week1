@@ -16,6 +16,7 @@ const findKey = function(data, func) {
 };
 
 
+
 const key = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri": { stars: 3 },
