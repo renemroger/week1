@@ -1,0 +1,14 @@
+{
+  "name": "car",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shouldBuyCar.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../../../node_modules/mocha/bin/mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
